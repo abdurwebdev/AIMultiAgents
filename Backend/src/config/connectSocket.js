@@ -9,8 +9,8 @@ import Conversation from "../models/conversation.model.js";
 export const initSocket = (httpServer) => {
   const io = new Server(httpServer, {
     cors: {
-      origin: "http://localhost:5173",
-      credentials: true,
+      origin: "*", // we will tighten later
+      methods: ["GET", "POST"]
     },
   });
 
